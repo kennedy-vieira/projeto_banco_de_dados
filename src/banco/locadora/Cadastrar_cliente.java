@@ -181,15 +181,7 @@ public class Cadastrar_cliente extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         // TODO add your handling code here:
-        /*
-        System.out.println(id_cliente.getText());
-        System.out.println(primeiro_nome.getText());
-        System.out.println(sobrenome.getText());
-        System.out.println(tipo.getSelectedItem());
-        System.out.println(data_nascimento.getText());
-        */
         String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO cliente(id_cliente, primeiro_nome, sobrenome, tipo, data_nascimento) values(" + id_cliente.getText() + ", '" + primeiro_nome.getText() + "', '" + sobrenome.getText() + "', '" + tipo.getSelectedItem() + "', '" + data_nascimento.getText() + "');";
-        //System.out.println(sql);
         Conexao conexao = new Conexao();
         if(conexao.executeSQL(sql)){
             JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso", "CADASTRO", JOptionPane.INFORMATION_MESSAGE);

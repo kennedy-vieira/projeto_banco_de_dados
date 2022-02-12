@@ -50,7 +50,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "todos", "" }));
+        selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "todos", "apenas responsáveis", "apenas dependentes" }));
         selecao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         selecionar.setText("selecionar");
@@ -147,22 +147,25 @@ public class Selecionar_cliente extends javax.swing.JFrame {
 
     private void selecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarActionPerformed
         // TODO add your handling code here:
-        String sql = "SELECT * FROM trabalho_locadora.\"cliente\";";
-        //System.out.println(sql);
+        String sql = "";
+        int op = selecao.getSelectedIndex();
+        switch(op){
+            case 0:
+                sql = "SELECT * FROM trabalho_locadora.\"cliente\";";
+                break;
+            case 1:
+                sql = "SELECT * FROM trabalho_locadora.\"cliente\" WHERE tipo = 'responsável';";
+                break;
+            case 2:
+                sql = "SELECT * FROM trabalho_locadora.\"cliente\" WHERE tipo = 'dependente';";
+                break;
+        }
         Conexao conexao = new Conexao();
         ResultSet rs = conexao.executeBusca(sql);
         DefaultTableModel model = (DefaultTableModel) tabela_clientes.getModel();
         model.setNumRows(0x0);
         try{
             while(rs.next()){
-                /*
-                int id_cliente = rs.getInt("id_cliente");
-                String primeiro_nome = rs.getString("primeiro_nome");
-                String sobrenome = rs.getString("sobrenome");
-                String tipo = rs.getString("tipo");
-                String data_nascimento = rs.getString("data_nascimento");
-                System.out.println(id_cliente + " " + primeiro_nome + " " + sobrenome + " " + tipo + " " + data_nascimento);
-                */
                 Object[] dados_cliente = {rs.getInt("id_cliente"), rs.getString("primeiro_nome"), rs.getString("sobrenome"), rs.getString("tipo"), rs.getString("data_nascimento")};
                 model.addRow(dados_cliente);
             }

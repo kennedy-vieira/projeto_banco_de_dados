@@ -50,7 +50,7 @@ public class Selecionar_dvd extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "todos", "" }));
+        selecao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "todos", "apenas filmes", "apenas séries" }));
         selecao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         selecionar.setText("selecionar");
@@ -147,22 +147,25 @@ public class Selecionar_dvd extends javax.swing.JFrame {
 
     private void selecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarActionPerformed
         // TODO add your handling code here:
-        String sql = "SELECT * FROM trabalho_locadora.\"dvd\";";
-        //System.out.println(sql);
+        String sql = "";
+        int op = selecao.getSelectedIndex();
+        switch(op){
+            case 0:
+                sql = "SELECT * FROM trabalho_locadora.\"dvd\";";
+                break;
+            case 1:
+                sql = "SELECT * FROM trabalho_locadora.\"dvd\" WHERE tipo = 'filme';";
+                break;
+            case 2:
+                sql = "SELECT * FROM trabalho_locadora.\"dvd\" WHERE tipo = 'série';";
+                break;
+        }
         Conexao conexao = new Conexao();
         ResultSet rs = conexao.executeBusca(sql);
         DefaultTableModel model = (DefaultTableModel) tabela_clientes.getModel();
         model.setNumRows(0x0);
         try{
             while(rs.next()){
-                /*
-                int id_cliente = rs.getInt("id_cliente");
-                String primeiro_nome = rs.getString("primeiro_nome");
-                String sobrenome = rs.getString("sobrenome");
-                String tipo = rs.getString("tipo");
-                String data_nascimento = rs.getString("data_nascimento");
-                System.out.println(id_cliente + " " + primeiro_nome + " " + sobrenome + " " + tipo + " " + data_nascimento);
-                */
                 Object[] dados_cliente = {rs.getInt("id_dvd"), rs.getString("titulo"), rs.getInt("class_etaria"), rs.getString("data_lancamento"), rs.getInt("qnt_locacao"), rs.getInt("qnt_total"), rs.getString("tipo")};
                 model.addRow(dados_cliente);
             }

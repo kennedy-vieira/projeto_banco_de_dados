@@ -119,25 +119,25 @@ public class Menu_principal extends javax.swing.JFrame {
 
     private void realizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarActionPerformed
         // TODO add your handling code here:
-        String op = operacao.getSelectedItem().toString();
+        int op = operacao.getSelectedIndex();
         switch(op){
-            case "cadastrar cliente":
+            case 0:
                 Cadastrar_cliente cadastro_cliente = new Cadastrar_cliente();
                 cadastro_cliente.setVisible(true);
                 break;
-            case "cadastrar usuário":
+            case 1:
                 Cadastrar_usuario cadastro_usuario = new Cadastrar_usuario();
                 cadastro_usuario.setVisible(true);
                 break;
-            case "cadastrar dvd":
+            case 2:
                 Cadastrar_dvd cadastro_dvd = new Cadastrar_dvd();
                 cadastro_dvd.setVisible(true);
                 break;
-            case "selecionar cliente":
+            case 3:
                 Selecionar_cliente cliente_selecionado = new Selecionar_cliente();
                 cliente_selecionado.setVisible(true);
                 break;
-            case "selecionar dvd":
+            case 4:
                 Selecionar_dvd dvd_selecionado = new Selecionar_dvd();
                 dvd_selecionado.setVisible(true);
                 break;
