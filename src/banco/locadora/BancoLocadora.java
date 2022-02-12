@@ -16,8 +16,8 @@ public class BancoLocadora {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Conexao con = new Conexao();
-        Menu_principal menu = new Menu_principal(con);
+        //Conexao con = new Conexao();
+        Menu_principal menu = new Menu_principal();
         menu.setVisible(true);
     }
     

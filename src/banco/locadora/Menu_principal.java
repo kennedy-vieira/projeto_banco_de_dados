@@ -11,12 +11,10 @@ import banco.locadora.Conexao;
  * @author sabri
  */
 public class Menu_principal extends javax.swing.JFrame {
-    Conexao conexao;
     /**
      * Creates new form Cadastrar_cliente
      */
-    public Menu_principal(Conexao con) {
-        conexao = con;
+    public Menu_principal() {
         initComponents();
     }
 
@@ -48,7 +46,7 @@ public class Menu_principal extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário" }));
+        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário", "cadastrar dvd", "selecionar cliente" }));
         operacao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         realizar.setText("realizar");
@@ -124,12 +122,20 @@ public class Menu_principal extends javax.swing.JFrame {
         String op = operacao.getSelectedItem().toString();
         switch(op){
             case "cadastrar cliente":
-                Cadastrar_cliente cadastro_cliente = new Cadastrar_cliente(conexao);
+                Cadastrar_cliente cadastro_cliente = new Cadastrar_cliente();
                 cadastro_cliente.setVisible(true);
                 break;
             case "cadastrar usuário":
-                Cadastrar_usuario cadastro_usuario = new Cadastrar_usuario(conexao);
+                Cadastrar_usuario cadastro_usuario = new Cadastrar_usuario();
                 cadastro_usuario.setVisible(true);
+                break;
+            case "cadastrar dvd":
+                Cadastrar_dvd cadastro_dvd = new Cadastrar_dvd();
+                cadastro_dvd.setVisible(true);
+                break;
+            case "selecionar cliente":
+                Selecionar_cliente cliente_selecionado = new Selecionar_cliente();
+                cliente_selecionado.setVisible(true);
                 break;
         }
     }//GEN-LAST:event_realizarActionPerformed
@@ -175,7 +181,7 @@ public class Menu_principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu_principal(null).setVisible(true);
+                new Menu_principal().setVisible(true);
             }
         });
     }

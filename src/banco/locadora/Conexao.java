@@ -7,6 +7,7 @@ package banco.locadora;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
@@ -20,7 +21,7 @@ public class Conexao {
     private Connection con;
     
     Conexao(){
-        url = "jdbc:postgresql://10.0.0.102:5432/banco_de_dados_ufjf";
+        url = "jdbc:postgresql://10.0.0.100:5432/banco_de_dados_ufjf";
         usuario = "postgres";
         senha = "aluno123";
         
@@ -41,7 +42,18 @@ public class Conexao {
         } catch (Exception e){
             e.printStackTrace();
             return 0;
+        }            
+    }
+    
+    public ResultSet executeBusca(String sql){
+        try{
+            Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            con.close();
+            return rs;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
-            
     }
 }

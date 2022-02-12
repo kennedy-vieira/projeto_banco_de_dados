@@ -10,11 +10,11 @@ import banco.locadora.Conexao;
  *
  * @author sabri
  */
-public class Cadastrar_usuario extends javax.swing.JFrame {
+public class Cadastrar_dvd extends javax.swing.JFrame {
     /**
      * Creates new form Cadastrar_cliente
      */
-    public Cadastrar_usuario() {
+    public Cadastrar_dvd() {
         initComponents();
     }
 
@@ -33,63 +33,64 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        id_usuario = new javax.swing.JTextField();
-        primeiro_nome = new javax.swing.JTextField();
-        sobrenome = new javax.swing.JTextField();
-        cpf = new javax.swing.JTextField();
+        id_dvd = new javax.swing.JTextField();
+        titulo = new javax.swing.JTextField();
+        class_etaria = new javax.swing.JTextField();
+        data_lancamento = new javax.swing.JTextField();
         tipo = new javax.swing.JComboBox<>();
         cadastrar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        qnt_locacao = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        senha = new javax.swing.JPasswordField();
+        qnt_total = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("CADASTRAR USUÁRIO");
+        setTitle("CADASTRAR DVD");
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("primeiro nome");
+        jLabel1.setText("título");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel1.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel1.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel1.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel1.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel1.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(101, 20));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("sobrenome");
+        jLabel2.setText("classificação etária");
         jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel2.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel2.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel2.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel2.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel2.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel2.setPreferredSize(new java.awt.Dimension(101, 20));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("id");
         jLabel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel3.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel3.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel3.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel3.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel3.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel3.setPreferredSize(new java.awt.Dimension(101, 20));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("tipo");
         jLabel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel4.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel4.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel4.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel4.setPreferredSize(new java.awt.Dimension(101, 20));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("cpf");
+        jLabel5.setText("data de lançamento");
+        jLabel5.setToolTipText("");
         jLabel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel5.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel5.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel5.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel5.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel5.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel5.setPreferredSize(new java.awt.Dimension(101, 20));
 
-        cpf.setToolTipText("");
-        cpf.setName(""); // NOI18N
+        data_lancamento.setToolTipText("DD-MM-AAAA");
+        data_lancamento.setName(""); // NOI18N
 
-        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "funcionário", "gerente" }));
+        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "filme", "série" }));
         tipo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         cadastrar.setText("cadastrar");
@@ -117,25 +118,29 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("CADASTRAR USUÁRIO");
+        jLabel6.setText("CADASTRAR DVD");
         jLabel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel6.setMaximumSize(new java.awt.Dimension(240, 22));
         jLabel6.setMinimumSize(new java.awt.Dimension(240, 22));
         jLabel6.setPreferredSize(new java.awt.Dimension(240, 22));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("e-mail");
+        jLabel7.setText("qnt. em locação");
+        jLabel7.setToolTipText("quantidade em locação");
         jLabel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel7.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel7.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel7.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLabel7.setMaximumSize(new java.awt.Dimension(101, 20));
+        jLabel7.setMinimumSize(new java.awt.Dimension(101, 20));
+        jLabel7.setPreferredSize(new java.awt.Dimension(101, 20));
+
+        qnt_locacao.setToolTipText("");
+        qnt_locacao.setName(""); // NOI18N
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("senha");
+        jLabel8.setText("quantidade total");
         jLabel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jLabel8.setMaximumSize(new java.awt.Dimension(100, 20));
-        jLabel8.setMinimumSize(new java.awt.Dimension(100, 20));
-        jLabel8.setPreferredSize(new java.awt.Dimension(100, 20));
+
+        qnt_total.setToolTipText("");
+        qnt_total.setName(""); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,24 +159,24 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id_usuario)
-                            .addComponent(primeiro_nome)
-                            .addComponent(sobrenome, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cpf, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(id_dvd)
+                            .addComponent(titulo)
+                            .addComponent(class_etaria, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(data_lancamento, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 138, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 137, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(email))
+                        .addComponent(qnt_locacao))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(senha)))
+                        .addComponent(qnt_total)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -181,28 +186,28 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id_dvd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(primeiro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(class_etaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(data_lancamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qnt_locacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(qnt_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,14 +224,14 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         // TODO add your handling code here:
-        System.out.println(id_usuario.getText());
-        System.out.println(primeiro_nome.getText());
-        System.out.println(sobrenome.getText());
-        System.out.println(cpf.getText());
-        System.out.println(email.getText());
-        System.out.println(senha.getPassword());
+        System.out.println(id_dvd.getText());
+        System.out.println(titulo.getText());
+        System.out.println(class_etaria.getText());
+        System.out.println(data_lancamento.getText());
+        System.out.println(qnt_locacao.getText());
+        System.out.println(qnt_total.getText());
         System.out.println(tipo.getSelectedItem());
-        String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO usuario(id_usuario, primeiro_nome, sobrenome, cpf, email, senha, tipo) values(" + id_usuario.getText() + ", '" + primeiro_nome.getText() + "', '" + sobrenome.getText() + "', '" + cpf.getText() + "', '" + email.getText() + "', '" + senha.getPassword() + "', '" + tipo.getSelectedItem() + "');";
+        String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO dvd(id_dvd, titulo, class_etaria, data_lancamento, qnt_locacao, qnt_total, tipo) values(" + id_dvd.getText() + ", '" + titulo.getText() + "', " + class_etaria.getText() + ", '" + data_lancamento.getText() + "', " + qnt_locacao.getText() + ", " + qnt_total.getText() + ", '" + tipo.getSelectedItem() + "');";
         System.out.println(sql);
         Conexao conexao = new Conexao();
         conexao.executeSQL(sql);
@@ -253,14 +258,38 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastrar_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastrar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -273,7 +302,7 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar_usuario().setVisible(true);
+                new Cadastrar_dvd().setVisible(true);
             }
         });
     }
@@ -281,9 +310,9 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrar;
     private javax.swing.JButton cancelar;
-    private javax.swing.JTextField cpf;
-    private javax.swing.JTextField email;
-    private javax.swing.JTextField id_usuario;
+    private javax.swing.JTextField class_etaria;
+    private javax.swing.JTextField data_lancamento;
+    private javax.swing.JTextField id_dvd;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -293,9 +322,9 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField primeiro_nome;
-    private javax.swing.JPasswordField senha;
-    private javax.swing.JTextField sobrenome;
+    private javax.swing.JTextField qnt_locacao;
+    private javax.swing.JTextField qnt_total;
     private javax.swing.JComboBox<String> tipo;
+    private javax.swing.JTextField titulo;
     // End of variables declaration//GEN-END:variables
 }

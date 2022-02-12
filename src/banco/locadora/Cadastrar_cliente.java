@@ -11,12 +11,10 @@ import banco.locadora.Conexao;
  * @author sabri
  */
 public class Cadastrar_cliente extends javax.swing.JFrame {
-    Conexao conexao;
     /**
      * Creates new form Cadastrar_cliente
      */
-    public Cadastrar_cliente(Conexao con) {
-        conexao = con;
+    public Cadastrar_cliente() {
         initComponents();
     }
 
@@ -81,7 +79,7 @@ public class Cadastrar_cliente extends javax.swing.JFrame {
         jLabel5.setText("data de nascimento");
         jLabel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        data_nascimento.setToolTipText("");
+        data_nascimento.setToolTipText("DD-MM-AAAA");
         data_nascimento.setName(""); // NOI18N
 
         tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "dependente", "responsável" }));
@@ -159,9 +157,9 @@ public class Cadastrar_cliente extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(primeiro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -189,6 +187,7 @@ public class Cadastrar_cliente extends javax.swing.JFrame {
         System.out.println(data_nascimento.getText());
         String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO cliente(id_cliente, primeiro_nome, sobrenome, tipo, data_nascimento) values(" + id_cliente.getText() + ", '" + primeiro_nome.getText() + "', '" + sobrenome.getText() + "', '" + tipo.getSelectedItem() + "', '" + data_nascimento.getText() + "');";
         System.out.println(sql);
+        Conexao conexao = new Conexao();
         conexao.executeSQL(sql);
     }//GEN-LAST:event_cadastrarActionPerformed
 
@@ -229,7 +228,7 @@ public class Cadastrar_cliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar_cliente(null).setVisible(true);
+                new Cadastrar_cliente().setVisible(true);
             }
         });
     }
