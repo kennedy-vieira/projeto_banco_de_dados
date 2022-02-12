@@ -21,27 +21,27 @@ public class Conexao {
     private Connection con;
     
     Conexao(){
-        url = "jdbc:postgresql://10.0.0.100:5432/banco_de_dados_ufjf";
+        url = "jdbc:postgresql://localhost:5432/banco_de_dados_ufjf";
         usuario = "postgres";
         senha = "aluno123";
         
         try{
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("Conexão realizada com sucesso!");
+            //System.out.println("Conexão realizada com sucesso!");
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-    public int executeSQL(String sql){
+    public boolean executeSQL(String sql){
         try{
             Statement afirmacao = con.createStatement();
-            int res = afirmacao.executeUpdate(sql);
+            afirmacao.executeUpdate(sql);
             con.close();
-            return res;            
+            return true;            
         } catch (Exception e){
             e.printStackTrace();
-            return 0;
+            return false;
         }            
     }
     

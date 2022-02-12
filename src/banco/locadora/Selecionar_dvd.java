@@ -15,11 +15,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sabri
  */
-public class Selecionar_cliente extends javax.swing.JFrame {
+public class Selecionar_dvd extends javax.swing.JFrame {
     /**
      * Creates new form Cadastrar_cliente
      */
-    public Selecionar_cliente(){
+    public Selecionar_dvd(){
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
         tabela_clientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SELECIONAR CLIENTE");
+        setTitle("SELECIONAR DVD");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("selecionar");
@@ -79,7 +79,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("SELECIONAR CLIENTE");
+        jLabel6.setText("SELECIONAR DVD");
         jLabel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jLabel6.setMaximumSize(new java.awt.Dimension(240, 22));
         jLabel6.setMinimumSize(new java.awt.Dimension(240, 22));
@@ -90,11 +90,11 @@ public class Selecionar_cliente extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id_cliente", "primeiro_nome", "sobrenome", "tipo", "data_nascimento"
+                "id_dvd", "titulo", "class_etaria", "data_lancamento", "qnt_locacao", "qnt_total", "tipo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -147,7 +147,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
 
     private void selecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selecionarActionPerformed
         // TODO add your handling code here:
-        String sql = "SELECT * FROM trabalho_locadora.\"cliente\";";
+        String sql = "SELECT * FROM trabalho_locadora.\"dvd\";";
         //System.out.println(sql);
         Conexao conexao = new Conexao();
         ResultSet rs = conexao.executeBusca(sql);
@@ -163,7 +163,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
                 String data_nascimento = rs.getString("data_nascimento");
                 System.out.println(id_cliente + " " + primeiro_nome + " " + sobrenome + " " + tipo + " " + data_nascimento);
                 */
-                Object[] dados_cliente = {rs.getInt("id_cliente"), rs.getString("primeiro_nome"), rs.getString("sobrenome"), rs.getString("tipo"), rs.getString("data_nascimento")};
+                Object[] dados_cliente = {rs.getInt("id_dvd"), rs.getString("titulo"), rs.getInt("class_etaria"), rs.getString("data_lancamento"), rs.getInt("qnt_locacao"), rs.getInt("qnt_total"), rs.getString("tipo")};
                 model.addRow(dados_cliente);
             }
         }catch (Exception e){
@@ -192,14 +192,22 @@ public class Selecionar_cliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Selecionar_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Selecionar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Selecionar_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Selecionar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Selecionar_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Selecionar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Selecionar_cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Selecionar_dvd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -212,7 +220,7 @@ public class Selecionar_cliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Selecionar_cliente().setVisible(true);
+                new Selecionar_dvd().setVisible(true);
             }
         });
     }

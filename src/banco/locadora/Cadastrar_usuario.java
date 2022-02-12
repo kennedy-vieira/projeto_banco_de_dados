@@ -5,6 +5,7 @@
  */
 package banco.locadora;
 import banco.locadora.Conexao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -219,6 +220,7 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         // TODO add your handling code here:
+        /*
         System.out.println(id_usuario.getText());
         System.out.println(primeiro_nome.getText());
         System.out.println(sobrenome.getText());
@@ -226,10 +228,17 @@ public class Cadastrar_usuario extends javax.swing.JFrame {
         System.out.println(email.getText());
         System.out.println(senha.getPassword());
         System.out.println(tipo.getSelectedItem());
+        */
         String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO usuario(id_usuario, primeiro_nome, sobrenome, cpf, email, senha, tipo) values(" + id_usuario.getText() + ", '" + primeiro_nome.getText() + "', '" + sobrenome.getText() + "', '" + cpf.getText() + "', '" + email.getText() + "', '" + senha.getPassword() + "', '" + tipo.getSelectedItem() + "');";
-        System.out.println(sql);
+        //System.out.println(sql);
         Conexao conexao = new Conexao();
-        conexao.executeSQL(sql);
+        if(conexao.executeSQL(sql)){
+            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso", "CADASTRO", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Houve um erro ao cadastrar o usuário", "CADASTRO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed

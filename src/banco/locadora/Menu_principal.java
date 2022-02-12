@@ -46,7 +46,7 @@ public class Menu_principal extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário", "cadastrar dvd", "selecionar cliente" }));
+        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário", "cadastrar dvd", "selecionar cliente", "selecionar dvd" }));
         operacao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         realizar.setText("realizar");
@@ -136,6 +136,10 @@ public class Menu_principal extends javax.swing.JFrame {
             case "selecionar cliente":
                 Selecionar_cliente cliente_selecionado = new Selecionar_cliente();
                 cliente_selecionado.setVisible(true);
+                break;
+            case "selecionar dvd":
+                Selecionar_dvd dvd_selecionado = new Selecionar_dvd();
+                dvd_selecionado.setVisible(true);
                 break;
         }
     }//GEN-LAST:event_realizarActionPerformed

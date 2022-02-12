@@ -5,6 +5,7 @@
  */
 package banco.locadora;
 import banco.locadora.Conexao;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -224,6 +225,7 @@ public class Cadastrar_dvd extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         // TODO add your handling code here:
+        /*
         System.out.println(id_dvd.getText());
         System.out.println(titulo.getText());
         System.out.println(class_etaria.getText());
@@ -231,10 +233,17 @@ public class Cadastrar_dvd extends javax.swing.JFrame {
         System.out.println(qnt_locacao.getText());
         System.out.println(qnt_total.getText());
         System.out.println(tipo.getSelectedItem());
+        */
         String sql = "SET SCHEMA 'trabalho_locadora'; INSERT INTO dvd(id_dvd, titulo, class_etaria, data_lancamento, qnt_locacao, qnt_total, tipo) values(" + id_dvd.getText() + ", '" + titulo.getText() + "', " + class_etaria.getText() + ", '" + data_lancamento.getText() + "', " + qnt_locacao.getText() + ", " + qnt_total.getText() + ", '" + tipo.getSelectedItem() + "');";
-        System.out.println(sql);
+        //System.out.println(sql);
         Conexao conexao = new Conexao();
-        conexao.executeSQL(sql);
+        if(conexao.executeSQL(sql)){
+            JOptionPane.showMessageDialog(null, "DVD cadastrado com sucesso", "CADASTRO", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Houve um erro ao cadastrar o DVD", "CADASTRO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
