@@ -20,7 +20,7 @@ public class Conexao {
     private Connection con;
     
     Conexao(){
-        url = "jdbc:postgresql://localhost:5432/banco_de_dados_ufjf";
+        url = "jdbc:postgresql://10.0.0.102:5432/banco_de_dados_ufjf";
         usuario = "postgres";
         senha = "aluno123";
         
