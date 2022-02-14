@@ -1,0 +1,117 @@
+--tabela : endereco
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Avenida Princial','centro',12214431,653,'São José dos Campos','SP');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rua Prefeito Gerson MIranda','Lagoa',27930845,125,'Macaé','RJ');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rua Pedestre E','Rio Branco',31535494,854,'Belo Horizonte','MG');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rua Coronel Alexanzito','Centro',62800970,1192,'Aracati','Ce');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Avenida Virginia Graciosi Pacelli','Alvorada',32041540,840,'Contagem','MG');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rodovia BR-364','Residencial Rosa Linda',69909040,740,'Rio Branco','AC');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rua Modena','Residencial Florença',78555410,41,'Sinop','MT');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rua Arco-iris','Felipe Camarão',59074310,56,'Natal','RN');
+INSERT INTO endereco(rua, bairro,cep, numero,cidade, estado)
+values('Rodovia PA-150','Cidade Nova',68506971,0,'Marabá','PA');
+
+-- tabela :clientes - responsaveis
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('joao','silva','01-01-1990','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('victor','melo rocha','02-01-1967','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Renan','Costa Cunha','12-02-1995','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Caio','goncalves cardoso','03-05-2001','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Paulo','goncalves correia','07-11-1970','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Júlio','Santos Ferreira','10-11-1999','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Vinicius','Dias Silva','03-01-1987','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Manuela','Gomes Fernandes','09-08-1953','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Julian','Carvalho Santos','09-09-1993','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Diego','Alves Pereira','02-11-1962','responsável');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Savio','Marques','02-11-1982','responsável');
+
+
+    
+-- tabela :clientes - dependentes
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Brenda','Fernandes Correia','01-12-2008','dependente');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Aline','Pereira Cavalcanti','09-09-2007','dependente');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Kauã','Carvalho Costa','07-11-2006','dependente');
+INSERT INTO cliente(primeiro_nome,sobrenome, data_nascimento,tipo)
+values('Julia','Barros Pereira','07-08-2005','dependente');
+
+--tabela : responsável
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (1, 1, 'SilvaJoao@mail.co', 0, 20058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (2, 2, 'RochaVictor@mail.co', 0, 19058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (3, 3, 'CunhaRenan@mail.co', 0, 18058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (4, 4, 'CardosoCaio@mail.co', 0, 17058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (5, 5, 'CorreiaPaulo@mail.co', 0, 16058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (6, 6, 'SantosJulio@mail.co', 0, 15058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (7, 7, 'SilvaVinicius@mail.co', 0, 14058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (8, 8, 'FernandesManuela@mail.co', 0, 13058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (9, 9, 'SantosJulian@mail.co', 0, 12058246752);
+INSERT INTO responsável(id_cliente, id_endereco, email, status, cpf) values (10, 5, 'PereiraDiego@mail.co', 0, 11058246752);
+
+
+    --tabela : dependente
+INSERT INTO dependente(id_cliente, id_responsável)
+values(11, 1);
+INSERT INTO dependente(id_cliente, id_responsável)
+values(12, 2);
+INSERT INTO dependente(id_cliente, id_responsável)
+values(13, 3);
+INSERT INTO dependente(id_cliente, id_responsável)
+values(14, 4);
+
+
+
+    --tabela : telefone_responsável
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (1, 48549987);
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (2, 88754958);
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (3, 52149658);
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (4, 47855236);
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (5, 56897854);
+INSERT INTO telefone_responsável(id_responsável, telefone_responsável) values (6, 46825791);
+
+        --tabela : usuario - gerentes
+
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('André','Pereira Lima','35050088267','AndrePereiraLima@armyspy.com','gshbvousb31r','gerente');
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('Gabrielle','Cunha Cardoso','37413390167','GabrielleCunhaCardoso@dayrep.com','sdojifsofjsfdjisd1132','gerente');
+
+    --tabela : usuario - funcionarios
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('Gustavo','Silva Martins','30644388404','GustavoSilvaMartins@teleworm.us','h82932hf9h2f9','funcionario');
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('Leticia','Costa Cardoso','13292004896','LeticiaCostaCardoso@teleworm.us','fj2039jf203jf','funcionario');
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('Victor','Araujo Cavalcanti','48053869831','VictorAraujoCavalcanti@rhyta.com','ng243ng0g2hn4g','funcionario');
+INSERT INTO usuario(primeiro_nome,sobrenome,cpf,email,senha,tipo)
+values('Leonor','Costa Cunha','87412419757','LeonorCostaCunha@jourrapide.com','fn23290h3bfn29f','funcionario');
+
+    --tabela : telefone_usuario
+INSERT INTO telefone_usuario(id_usuario, telefone_usuario) values (1, 98765432);
+INSERT INTO telefone_usuario(id_usuario, telefone_usuario) values (2, 12345678);
+INSERT INTO telefone_usuario(id_usuario, telefone_usuario) values (3, 25874196);
+INSERT INTO telefone_usuario(id_usuario, telefone_usuario) values (4, 56798413);
+
+    --tabela : cadastrar
+INSERT INTO cadastrar(id_gerente, id_funcionario) values (1, 3);
+INSERT INTO cadastrar(id_gerente, id_funcionario) values (1, 4);
+INSERT INTO cadastrar(id_gerente, id_funcionario) values (2, 5);
+INSERT INTO cadastrar(id_gerente, id_funcionario) values (2, 6)

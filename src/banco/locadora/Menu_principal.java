@@ -46,7 +46,7 @@ public class Menu_principal extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(100, 20));
         jLabel4.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário", "cadastrar dvd", "selecionar cliente", "selecionar dvd" }));
+        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cadastrar cliente", "cadastrar usuário", "cadastrar dvd", "selecionar cliente", "selecionar dvd", "pesquisar locações" }));
         operacao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         realizar.setText("realizar");
@@ -85,13 +85,15 @@ public class Menu_principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(operacao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(realizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(operacao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(realizar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 138, Short.MAX_VALUE)))
@@ -140,6 +142,10 @@ public class Menu_principal extends javax.swing.JFrame {
             case 4:
                 Selecionar_dvd dvd_selecionado = new Selecionar_dvd();
                 dvd_selecionado.setVisible(true);
+                break;
+            case 5:
+                Pesquisa_locacao_usuario pesquisa_locacao = new Pesquisa_locacao_usuario();
+                pesquisa_locacao.setVisible(true);
                 break;
         }
     }//GEN-LAST:event_realizarActionPerformed
