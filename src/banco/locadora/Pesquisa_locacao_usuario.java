@@ -55,6 +55,7 @@ public class Pesquisa_locacao_usuario extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("PESQUISA LOCAÇÕES");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -234,6 +235,7 @@ public class Pesquisa_locacao_usuario extends javax.swing.JFrame {
                 new Pesquisa_locacao_usuario().setVisible(true);
             }
         });
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
