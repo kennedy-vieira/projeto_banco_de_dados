@@ -55,36 +55,36 @@ public class Pesquisa_locacao_usuario extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PESQUISA LOCAÇÕES");
+        setTitle("PESQUISAR LOCAÇÕES");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Status", "Data Locação", "Data Entrega", "Valor"
+                "status", "data_locacao", "data_entrega", "valor"
             }
         ));
         jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jTable2.setPreferredSize(new java.awt.Dimension(375, 0));
         jScrollPane2.setViewportView(jTable2);
 
-        jButton1.setText("Pesquisar");
+        jButton1.setText("pesquisar");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setMaximumSize(new java.awt.Dimension(60, 21));
-        jButton1.setMinimumSize(new java.awt.Dimension(60, 21));
-        jButton1.setPreferredSize(new java.awt.Dimension(60, 21));
+        jButton1.setMaximumSize(new java.awt.Dimension(65, 21));
+        jButton1.setMinimumSize(new java.awt.Dimension(61, 21));
+        jButton1.setPreferredSize(new java.awt.Dimension(65, 21));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Voltar");
+        jButton2.setText("voltar");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.setMaximumSize(new java.awt.Dimension(60, 21));
-        jButton2.setMinimumSize(new java.awt.Dimension(60, 21));
-        jButton2.setPreferredSize(new java.awt.Dimension(60, 21));
+        jButton2.setMaximumSize(new java.awt.Dimension(65, 21));
+        jButton2.setMinimumSize(new java.awt.Dimension(61, 21));
+        jButton2.setPreferredSize(new java.awt.Dimension(65, 21));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -142,7 +142,7 @@ public class Pesquisa_locacao_usuario extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 138, Short.MAX_VALUE)))))
+                                .addGap(0, 128, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
