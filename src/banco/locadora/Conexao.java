@@ -21,9 +21,9 @@ public class Conexao {
     private Connection con;
     
     Conexao(){
-        url = "jdbc:postgresql://localhost:5432/postgres";
+        url = "jdbc:postgresql://localhost:5432/banco_de_dados_ufjf";
         usuario = "postgres";
-        senha = "postgres";
+        senha = "aluno123";
         
         try{
             Class.forName("org.postgresql.Driver");

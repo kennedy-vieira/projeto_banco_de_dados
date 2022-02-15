@@ -144,7 +144,7 @@ public class Menu_principal extends javax.swing.JFrame {
                 dvd_selecionado.setVisible(true);
                 break;
             case 5:
-                Pesquisa_locacao_usuario pesquisa_locacao = new Pesquisa_locacao_usuario();
+                Pesquisa_locacao_cliente pesquisa_locacao = new Pesquisa_locacao_cliente();
                 pesquisa_locacao.setVisible(true);
                 break;
         }
